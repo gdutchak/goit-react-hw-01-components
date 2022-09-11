@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+import { arrayOf, shape, string } from 'prop-types';
 import '../TransactionHistory/TransactionHistory';
 
 export const Transactions = ({ items }) => {
@@ -23,7 +23,10 @@ export const Transactions = ({ items }) => {
 }
 
 Transactions.propTypes = {
-    type: string,
-    amount: string,
-    currency: string,
+    items: arrayOf(shape({
+        id: string.isRequired,
+        type: string.isRequired,
+        amount: string.isRequired,
+        currency: string.isRequired,
+    }))
 }
