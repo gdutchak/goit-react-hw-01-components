@@ -1,8 +1,7 @@
-import { arrayOf, shape, bool, string } from 'prop-types';
+import { bool, string } from 'prop-types';
 import '../FriendListItem/FriendListItem';
 
 export const FriendListItem = ({ avatar, name, isOnline }) => {
-
     return <>
         <span className={isOnline ? "status status--active" : "status status--no-active"}>{isOnline}</span>
         <img className="friends-avatar" src={avatar} alt="User avatar" width="48" />
